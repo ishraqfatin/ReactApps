@@ -3,3 +3,69 @@
 	margin: 0;
 	padding: 0;
 }
+#root {
+	background-color: aliceblue;
+}
+body {
+	font-family: "Roboto Mono", sans-serif;
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+#logo {
+	width: 200px;
+}
+
+#gallery {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+	width: 95vw;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 1px rgba(58, 45, 45, 0.281);
+	overflow: hidden;
+	background-color: rgb(240, 248, 255);
+	width: 220px;
+	height: 350px;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 25%;
+	padding: 10px;
+}
+.characterName {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.characterImage {
+	height: 75%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.showingResults {
+	width: 100%;
+	text-align: center;
+}
+

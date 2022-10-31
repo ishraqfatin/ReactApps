@@ -1,21 +1,35 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import Cards from "./components/Cards";
+import SearchBox from "./components/SearchBox";
 
 function App() {
-	const [num, setNum] = useState("");
+	const [data, setData] = useState(null);
+	const api = `https://hp-api.herokuapp.com/api/characters`;
+
+	if (data != null) {
+		// console.log(data);
+	}
+
 	useEffect(() => {
-		console.log(num);
-	});
+		const getData = async () => {
+			try {
+				const actualData = await fetch(api).then((res) => res.json());
+				setData(actualData);
+			} catch (err) {
+				console.log("Error");
+			}
+		};
+		getData();
+	}, [api]);
 
 	return (
-		<div>
-			<h2>Search Characters</h2>
-			<input type="text" placeholder="Search Here" onInput={() => setNum()}/>
-			<br />
-			<button onClick={() => setNum("1")}>1</button>
-			<button onClick={() => setNum("2")}>2</button>
-			<button onClick={() => setNum("3")}>3</button>
-			<h3>Page {num}</h3>
+		<div id="main">
+			<img src="./logo.png" alt="" id="logo" />
+			<SearchBox />
+			<div id="gallery">
+				<Cards data={data} />
+			</div>
 		</div>
 	);
 }
