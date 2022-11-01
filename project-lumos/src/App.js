@@ -8,7 +8,7 @@ function App() {
 	let [data, setData] = useState(null);
 	let [search, setSearch] = useState("");
 	const api = `https://hp-api.herokuapp.com/api/characters`;
-
+	
 	// console.log(search);
 
 	useEffect(() => {
