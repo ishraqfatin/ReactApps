@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import Cards from "./components/Cards";
 import SearchBox from "./components/SearchBox";
 
+
 function App() {
-	const [data, setData] = useState(null);
+	let [data, setData] = useState(null);
+	let [search, setSearch] = useState("");
 	const api = `https://hp-api.herokuapp.com/api/characters`;
 
-	if (data != null) {
-		// console.log(data);
-	}
+	// console.log(search);
 
 	useEffect(() => {
 		const getData = async () => {
@@ -26,9 +26,9 @@ function App() {
 	return (
 		<div id="main">
 			<img src="./logo.png" alt="" id="logo" />
-			<SearchBox />
+			<SearchBox setSearch={setSearch} />
 			<div id="gallery">
-				<Cards data={data} />
+				<Cards data={data} search={search} />
 			</div>
 		</div>
 	);

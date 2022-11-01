@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const SearchBox = () => {
-  return (
-    <div>
-      <input type="text" className='searchbox' />
-    </div>
-  )
-}
+const SearchBox = ({ setSearch }) => {
+	return (
+		<div>
+			<input
+				type="text"
+				className="searchbox"
+				placeholder="Search"
+				onChange={(text) => {
+					setSearch(text.target.value);
+				}}
+			/>
+		</div>
+	);
+};
 
-export default SearchBox
+export default SearchBox;
