@@ -95,7 +95,4 @@ body {
 .searchbox::placeholder {
 	color: rgba(255, 166, 0, 0.774);
 }
-.searchbox:focus::placeholder{
-	content: "";
-}
 
