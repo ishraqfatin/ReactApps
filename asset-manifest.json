@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/%7BReactApps%7D/static/css/main.a80e8ca6.css",
+    "main.js": "/%7BReactApps%7D/static/js/main.1b34e485.js",
+    "index.html": "/%7BReactApps%7D/index.html",
+    "main.a80e8ca6.css.map": "/%7BReactApps%7D/static/css/main.a80e8ca6.css.map",
+    "main.1b34e485.js.map": "/%7BReactApps%7D/static/js/main.1b34e485.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a80e8ca6.css",
+    "static/js/main.1b34e485.js"
+  ]
+}
