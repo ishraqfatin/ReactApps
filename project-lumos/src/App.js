@@ -28,7 +28,7 @@ function App() {
 			<img src={logo} alt="" id="logo" />
 			<SearchBox setSearch={setSearch} />
 			<div id="gallery">
-				<Cards data={data} search={search}/>
+				<Cards data={data} search={search} />
 			</div>
 		</div>
 	);

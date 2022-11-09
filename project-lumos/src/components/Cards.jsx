@@ -65,7 +65,13 @@ const Cards = ({ data, search }) => {
 					></div>
 					<div
 						className="characterDetails"
-						style={character.image? { backgroundImage: `url(${character.image})` }: { backgroundImage: `url(https://www.all-tools-online.com/wp-content/uploads/2018/06/noPhotoFound.png)` }}
+						style={
+							character.image
+								? { backgroundImage: `url(${character.image})` }
+								: {
+										backgroundImage: `url(https://www.all-tools-online.com/wp-content/uploads/2018/06/noPhotoFound.png)`,
+								  }
+						}
 					>
 						<input
 							type="button"
@@ -79,9 +85,12 @@ const Cards = ({ data, search }) => {
 							<p id="name">{character.name}</p>
 							<div className="details">
 								<p>Gender: {character.gender}</p>
-								<p>House: {character.house !== ""
+								<p>
+									House:{" "}
+									{character.house !== ""
 										? " " + character.house
-										: " Not Available"}</p>
+										: " Not Available"}
+								</p>
 								<p>
 									DOB:{" "}
 									{character.dateOfBirth !== ""
