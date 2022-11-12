@@ -9,9 +9,7 @@ import Character from "./components/Character";
 function App() {
 	let [data, setData] = useState(null);
 	let [search, setSearch] = useState("");
-	let [character, setCharacter] = useState("");
-
-	console.log(character);
+	console.log(search);
 	useEffect(() => {
 		const getData = async () => {
 			try {
@@ -28,17 +26,18 @@ function App() {
 	return (
 		<Router>
 			<div id="main">
+				<img src={logo} alt="" id="logo" />
+				<SearchBox setSearch={setSearch} />
 				<Switch>
 					<Route exact path="/ReactApps/">
-						<img src={logo} alt="" id="logo" />
-						<SearchBox setSearch={setSearch} />
 						<div id="gallery">
-							<Cards data={data} search={search} setCharacter={setCharacter} />
+							<Cards data={data} search={search} />
 						</div>
 					</Route>
-					<Route path="/ReactApps/:name">
-						<Character data={data} />
-					</Route>
+					<Route
+						path="/ReactApps/:id"
+						children={<Character data={data} />}
+					></Route>
 				</Switch>
 			</div>
 		</Router>

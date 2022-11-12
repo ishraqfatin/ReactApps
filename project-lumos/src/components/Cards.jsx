@@ -11,11 +11,8 @@ const Cards = ({ data, search }) => {
 		return (
 			<div className="container" key={[name, alternate_names]}>
 				<Link
-					to={`/ReactApps/${name}`}
+					to={`/ReactApps/${name.substring(0, name.indexOf(' '))}`}
 					className="card"
-					// onClick={() => {
-					// 	setCharacter(index);
-					// }}
 				>
 					<img
 						src={image ? image : noPhotoFound}

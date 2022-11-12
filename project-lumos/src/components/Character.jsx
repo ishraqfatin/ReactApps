@@ -4,7 +4,9 @@ import noPhotoFound from "../img/noPhotoFound.png";
 import backBtn from "../img/backBtn.png";
 
 const Character = ({ data }) => {
-	const { name } = useParams();
+	let { id } = useParams();
+	console.log(id);
+	let name = id;
 
 	const [character] = data
 		.filter((a) => a.name.includes(name))
