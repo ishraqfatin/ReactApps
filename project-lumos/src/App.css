@@ -12,6 +12,11 @@ body {
 	font-family: "Roboto Mono", sans-serif;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 #main {
 	z-index: -1;
 	display: flex;
