@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import noPhotoFound from "../img/noPhotoFound.png";
 
+//MaterialUI Imports
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
+
 const Cards = ({ data, search }) => {
 	let result = null;
 	// console.log(character);
@@ -9,24 +17,26 @@ const Cards = ({ data, search }) => {
 
 		// .replace(/\s+/g, "")} To Remove Space
 		return (
-			<div className="container" key={[name, alternate_names]}>
-				<Link
-					to={`/ReactApps/${name.substring(0, name.indexOf(' '))}`}
-					className="card"
-				>
-					<img
-						src={image ? image : noPhotoFound}
-						alt="character"
-						className="characterImage"
-					/>
-					<div className="content">
-						<div className="characterName">{name}</div>
-						<div className="characterHouse">
-							House: {house ? house : "Wizard World"}
-						</div>
-					</div>
-				</Link>
-			</div>
+			<Card id="galleryCard" sx={{ width: 245, maxHeight:400 }} elevation={10} key={[name, alternate_names]}>
+				<CardActionArea >
+					<Link to={`/ReactApps/${name.substring(0, name.indexOf(" "))}`}>
+						<CardMedia
+							component="img"
+							height="280"
+							image={image ? image : noPhotoFound}
+							alt="green iguana"
+						/>
+						<CardContent>
+							<Typography gutterBottom variant="h5" component="div">
+								{name}
+							</Typography>
+							<Typography variant="body2" color="text.secondary">
+								House: {house ? house : "Wizard World"}
+							</Typography>
+						</CardContent>
+					</Link>
+				</CardActionArea>
+			</Card>
 		);
 	}
 
@@ -42,15 +52,14 @@ const Cards = ({ data, search }) => {
 				return showCard(index);
 			});
 	} else {
-		result = "No Characters Found";
+		result = "Loading";
 	}
 
 	return (
 		<>
 			<div className="showingResults">
-				<h4>Showing {result.length} results</h4>
+				<h4>{result.length? "Showing "+result.length+" results" : "No Characters Found :("}</h4>
 			</div>
-
 			{result}
 		</>
 	);

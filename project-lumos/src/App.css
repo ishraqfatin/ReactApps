@@ -3,10 +3,9 @@
 	margin: 0;
 	padding: 0;
 }
-#root,
 html {
-	background-color: rgba(240, 248, 255, 0.747);
-	height: 100%;
+	background-color: rgba(255, 255, 255, 0.644);
+	/* height: 100%; */
 }
 body {
 	font-family: "Roboto Mono", sans-serif;
@@ -17,13 +16,12 @@ a {
 	color: black;
 }
 
-#main {
-	z-index: -1;
+#header {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	height: 250px;
 }
 
 #logo {
@@ -42,18 +40,10 @@ a {
 	margin-bottom: 20px;
 }
 
-.card {
-	display: flex;
-	flex-direction: column;
-	border-radius: 10px;
-	box-shadow: 0 0 10px 1px rgba(58, 45, 45, 0.281);
-	overflow: hidden;
-	background-color: rgb(255, 255, 255);
-	width: 250px;
-	height: 350px;
-	transition: 0.2s;
+#galleryCard {
+	transition: 0.21s;
 }
-.card:hover {
+#galleryCard:hover {
 	transform: scale(1.02);
 	cursor: pointer;
 }
@@ -103,54 +93,14 @@ a {
 	color: rgba(255, 166, 0, 0.774);
 }
 
-#overlay {
-	position: fixed;
-	top: 0%;
-	left: 0%;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-	background-image: linear-gradient(45deg, #290101, #011222);
-	z-index: 1;
-	width: 100%;
-	height: 100vh;
-}
-
-.characterDetails {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	/* background-position: c; */
-	background-size: cover;
-	background-repeat: no-repeat;
-	z-index: 2;
-	width: 550px;
-	height: 900px;
-	border-radius: 20px;
-	box-shadow: -10px 20px 20px 1px rgba(0, 0, 0, 0.493);
-	overflow: hidden;
-	padding: 20px;
-	background-color: rgb(34, 34, 34);
-}
-#form {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	/* justify-content: center; */
-	background-color: rgba(0, 1, 2, 0.295);
-	border-radius: 8px;
-	height: 45%;
-	color: antiquewhite;
-	padding: 10px;
-}
 #name {
 	font-size: 25px;
 	font-family: monospace;
 	font-weight: 700;
+	color: whitesmoke;
 }
 #name::first-letter {
-	font-size: 70px;
+	font-size: 100px;
 }
 .details {
 	text-transform: capitalize;
@@ -158,45 +108,132 @@ a {
 	flex-direction: column;
 	font-size: 18px;
 	font-family: monospace;
-	color: rgba(250, 235, 215, 0.925);
+	color: rgba(165, 164, 164, 0.925);
 	font-weight: 100;
 	text-shadow: 0px 1px 0px #2c2c2c;
+	margin-bottom: 20px;
 }
 
-#exitBtn {
-	align-self: flex-end;
-	border: none;
-	/* border-radius: 10px; */
-	background-color: rgba(134, 136, 136, 0);
-	font-size: 25px;
-	transition: 0.2s;
+#characterCard {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+	border-radius: 0;
 }
-#exitBtn:hover {
-	cursor: pointer;
-	transform: rotate(360deg);
+#cardActionArea {
+	background-color: rgb(0, 0, 0);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 60%;
+	box-shadow: 0 0 20px 15px rgb(20, 20, 20);
 }
-#emptySpace {
-	position: fixed;
-	background-color: transparent;
-	width: inherit;
-	height: inherit;
+#cardContent {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	text-align: center;
+}
+
+#cardAction {
+	background-color: #222222;
+	width: 100%;
+	height: 8%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#cardActionBtn {
+	width: 500px;
+	height: 100%;
+	padding: 10px;
+}
+#goBack {
+	color: rgb(35, 87, 199);
+}
+#avatar {
+	width: 100%;
+	object-fit: contain;
+	background-color: #222222;
+}
+
+#status {
+	position: "absolute";
+	top: 28;
+	right: 0;
+	left: 0;
 	z-index: 1;
+	border: "none";
+	padding: 2px;
+	background-color: "blue";
 }
 
-@media (max-width: 400px) {
-	.characterDetails {
-		width: 80vw;
-		height: 75vh;
+@media (max-width: 800px) {
+	#avatar {
+		margin-top: 20px;
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+		object-position: center;
+		background-color: #222222;
+		border-radius: 100px;
+		box-shadow: 0 0 25px 5px rgb(29, 29, 29);
 	}
-	#form {
-		gap: 1px;
+	#characterCard {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		margin: 0 auto;
+		background-color: #000000;
+		border-radius: 0;
+	}
+
+	#cardActionArea {
+		height: 90vh;
+		background-color: rgb(0, 0, 0);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 100vw;
+		box-shadow: 0 0 25px 5px rgb(0, 0, 0);
+	}
+	#cardContent {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
 		text-align: center;
-		background-color: #050505b9;
+	}
+
+	#cardAction {
+		background-color: #222222;
+		width: 100%;
+		height: 70px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#cardActionBtn {
+		width: 500px;
+		height: 100%;
+		padding: 10px;
 	}
 	#name {
-		font-size: 20px;
+		font-size: 25px;
 		font-family: monospace;
 		font-weight: 700;
 		margin-bottom: 10px;
@@ -205,7 +242,7 @@ a {
 		font-size: 50px;
 	}
 	.details {
-		font-size: 16px;
+		font-size: 20px;
 	}
 	.searchbox input {
 		position: sticky;

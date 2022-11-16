@@ -12,6 +12,8 @@ function App() {
 	console.log(search);
 	useEffect(() => {
 		const getData = async () => {
+			console.log("Called");
+
 			try {
 				const api = `https://hp-api.herokuapp.com/api/characters`;
 				const actualData = await fetch(api).then((res) => res.json());
@@ -26,11 +28,13 @@ function App() {
 	return (
 		<Router>
 			<div id="main">
-				<img src={logo} alt="" id="logo" />
-				<SearchBox setSearch={setSearch} />
 				<Switch>
 					<Route exact path="/ReactApps/">
 						<div id="gallery">
+							<header id="header">
+								<img src={logo} alt="" id="logo" />
+								<SearchBox setSearch={setSearch} />
+							</header>
 							<Cards data={data} search={search} />
 						</div>
 					</Route>
